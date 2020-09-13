@@ -1,0 +1,2 @@
+
+npm run local-test && kpt fn run samples/ -v=2 --enable-exec --dry-run --network --exec-path ./image_digest_generator_run-macos

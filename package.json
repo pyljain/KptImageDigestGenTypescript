@@ -1,0 +1,34 @@
+{
+  "name": "kpt-sha-image",
+  "version": "0.1.0",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -Rf node_modules/ dist/",
+    "pretest": "npm run build",
+    "local-test": "npm run build && npx pkg dist/image_digest_generator_run.js",
+    "test": "jasmine --config=jasmine.json",
+    "kpt:docker-create": "kpt docker-create",
+    "kpt:docker-build": "kpt docker-build",
+    "kpt:docker-push": "kpt docker-push",
+    "kpt:function-create": "kpt function-create",
+    "kpt:type-create": "kpt type-create"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "kpt-functions": "^0.14.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "create-kpt-functions": "^0.17.0",
+    "@types/jasmine": "^3.3.12",
+    "@types/node": "^12.7.2",
+    "jasmine": "^3.4.0",
+    "tslint": "^5.19.0",
+    "typescript": "^3.5.3"
+  },
+  "kpt": {
+    "docker_repo_base": "patnaikshekhar/kpt-sha-image"
+  }
+}
